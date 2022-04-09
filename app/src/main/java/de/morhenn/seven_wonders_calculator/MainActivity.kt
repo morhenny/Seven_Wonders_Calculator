@@ -6,6 +6,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,13 @@ class MainActivity : AppCompatActivity() {
             for (j in 0..10) {
                 val row = table.getChildAt(j) as TableRow
                 val field = row.getChildAt(i) as EditText
+                if (j == 4) { //Science Row
+                    field.setOnLongClickListener {
+                        startScienceDialog(field)
+                        true
+                    }
+                }
+
                 field.setOnEditorActionListener { v, actionId, event ->
                     if (j == 0) {
                         if (i < 7) {
@@ -82,7 +90,74 @@ class MainActivity : AppCompatActivity() {
                 }
                 .setNeutralButton("Cancel") { _, _ -> }
                 .show()
-
         }
+    }
+
+    private fun startScienceDialog(field: EditText) {
+        val dialogLayout = layoutInflater.inflate(R.layout.science_dialog, null)
+        val scienceResult = dialogLayout.findViewById<TextView>(R.id.science_result)
+        val circleAmount = dialogLayout.findViewById<TextView>(R.id.circle_amount)
+        val gearAmount = dialogLayout.findViewById<TextView>(R.id.gear_amount)
+        val bookAmount = dialogLayout.findViewById<TextView>(R.id.book_amount)
+        var circles = 0
+        var gears = 0
+        var books = 0
+
+        dialogLayout.findViewById<ImageButton>(R.id.cicle_add).setOnClickListener {
+            circles = circleAmount.text.toString().toInt() + 1
+            circles.toString().also { circleAmount.text = it }
+            refreshScienceResult(circles, gears, books, scienceResult)
+        }
+        dialogLayout.findViewById<ImageButton>(R.id.circle_sub).setOnClickListener {
+            if (circleAmount.text.toString().toInt() > 0) {
+                circles = circleAmount.text.toString().toInt() - 1
+                circles.toString().also { circleAmount.text = it }
+                refreshScienceResult(circles, gears, books, scienceResult)
+            }
+        }
+        dialogLayout.findViewById<ImageButton>(R.id.gear_add).setOnClickListener {
+            gears = gearAmount.text.toString().toInt() + 1
+            gears.toString().also { gearAmount.text = it }
+            refreshScienceResult(circles, gears, books, scienceResult)
+        }
+        dialogLayout.findViewById<ImageButton>(R.id.gear_sub).setOnClickListener {
+            if (gearAmount.text.toString().toInt() > 0) {
+                gears = gearAmount.text.toString().toInt() - 1
+                gears.toString().also { gearAmount.text = it }
+                refreshScienceResult(circles, gears, books, scienceResult)
+            }
+        }
+        dialogLayout.findViewById<ImageButton>(R.id.book_add).setOnClickListener {
+            books = bookAmount.text.toString().toInt() + 1
+            books.toString().also { bookAmount.text = it }
+            refreshScienceResult(circles, gears, books, scienceResult)
+        }
+        dialogLayout.findViewById<ImageButton>(R.id.book_sub).setOnClickListener {
+            if (bookAmount.text.toString().toInt() > 0) {
+                books = bookAmount.text.toString().toInt() - 1
+                books.toString().also { bookAmount.text = it }
+                refreshScienceResult(circles, gears, books, scienceResult)
+            }
+        }
+        AlertDialog.Builder(this)
+            .setView(dialogLayout)
+            .setPositiveButton("Confirm") { _, _ ->
+                field.setText(scienceResult.text.toString())
+            }
+            .setNeutralButton("Cancel") { _, _ -> }
+            .show()
+    }
+
+    private fun refreshScienceResult(circles: Int, gears: Int, books: Int, resultView: TextView) {
+        var result = 0
+        var setCount = circles
+        if (gears < setCount) {
+            setCount = gears
+        }
+        if (books < setCount) {
+            setCount = books
+        }
+        result = setCount * 7 + circles.toDouble().pow(2.0).toInt() + gears.toDouble().pow(2.0).toInt() + books.toDouble().pow(2.0).toInt()
+        resultView.text = result.toString()
     }
 }
