@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Name" />
+
+            <EditText
+                android:hint="#1"
+                android:inputType="textPersonName"
+                android:maxLength="4"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:hint="#2"
+                android:inputType="textPersonName"
+                android:maxLength="4"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:hint="#3"
+                android:inputType="textPersonName"
+                android:maxLength="4"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:hint="#4"
+                android:inputType="textPersonName"
+                android:maxLength="4"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:hint="#5"
+                android:inputType="textPersonName"
+                android:maxLength="4"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:hint="#6"
+                android:inputType="textPersonName"
+                android:maxLength="4"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:hint="#7"
+                android:inputType="textPersonName"
+                android:maxLength="4"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Wunder:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Geld:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Krieg:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Science:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Blau:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Gelb:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Gilden:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Leaders:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Cities:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Armada:" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+
+            <EditText
+                android:inputType="numberSigned"
+                android:padding="3dip"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="3dip"
+                android:text="Summe:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="0"
+                android:textAlignment="center" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="0"
+                android:textAlignment="center" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="0"
+                android:textAlignment="center" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="0"
+                android:textAlignment="center" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="0"
+                android:textAlignment="center" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="0"
+                android:textAlignment="center" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="0"
+                android:textAlignment="center" />
+
+        </TableRow>
+    </TableLayout>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FF5722"
+        android:text="CALCULATE"
+        app:layout_constraintLeft_toRightOf="@id/reset"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FF5722"
+        android:text="RESET"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button"
+        app:layout_constraintTop_toBottomOf="@id/table" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
