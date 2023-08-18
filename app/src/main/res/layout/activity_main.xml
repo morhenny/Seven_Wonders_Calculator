@@ -79,7 +79,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="Wunder:" />
+                android:text="Wonders:" />
 
             <EditText
                 android:inputType="numberSigned"
@@ -121,7 +121,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="Geld:" />
+                android:text="Money:" />
 
             <EditText
                 android:inputType="numberSigned"
@@ -163,7 +163,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="Krieg:" />
+                android:text="War:" />
 
             <EditText
                 android:inputType="numberSigned"
@@ -247,7 +247,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="Blau:" />
+                android:text="Blue:" />
 
             <EditText
                 android:inputType="numberSigned"
@@ -289,7 +289,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="Gelb:" />
+                android:text="Yellow:" />
 
             <EditText
                 android:inputType="numberSigned"
@@ -331,7 +331,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="Gilden:" />
+                android:text="Gilds:" />
 
             <EditText
                 android:inputType="numberSigned"
@@ -499,7 +499,7 @@
 
             <TextView
                 android:padding="3dip"
-                android:text="Summe:"
+                android:text="Score:"
                 android:textStyle="bold" />
 
             <TextView
