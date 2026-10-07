@@ -1,3 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">7 Wonders Calculator</string>
+
+    <!-- General -->
+    <string name="back">Back</string>
+    <string name="more">More options</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="add">Add</string>
+    <string name="remove">Remove</string>
+    <string name="rename">Rename</string>
+    <string name="delete">Delete</string>
+    <string name="discard">Discard</string>
+    <string name="share">Share</string>
+    <string name="increase">Increase %1$s</string>
+    <string name="decrease">Decrease %1$s</string>
+
+    <!-- Categories -->
+    <string name="category_military">Military</string>
+    <string name="category_naval">Naval</string>
+    <string name="category_treasury">Treasury</string>
+    <string name="category_wonder">Wonder</string>
+    <string name="category_civilian">Civilian</string>
+    <string name="category_commercial">Commercial</string>
+    <string name="category_guilds">Guilds</string>
+    <string name="category_science">Science</string>
+    <string name="category_leaders">Leaders</string>
+    <string name="category_cities">Cities</string>
+    <string name="category_edifice">Edifice</string>
+
+    <string name="hint_military">Type the total or tap the conflict tokens</string>
+    <string name="hint_naval">Type the total or tap the naval tokens</string>
+    <string name="hint_treasury">1 point per 3 coins · coins break ties</string>
+    <string name="hint_wonder">Points from built wonder stages</string>
+    <string name="hint_civilian">Blue cards</string>
+    <string name="hint_commercial">Yellow cards (Age III)</string>
+    <string name="hint_guilds">Purple cards</string>
+    <string name="hint_science">Count symbols or type the points</string>
+    <string name="hint_leaders">White leader cards</string>
+    <string name="hint_cities">Black city cards</string>
+    <string name="hint_edifice">Edifice rewards and penalties</string>
+
+    <string name="expansion_leaders">Leaders</string>
+    <string name="expansion_cities">Cities</string>
+    <string name="expansion_armada">Armada</string>
+    <string name="expansion_edifice">Edifice</string>
+
+    <!-- Home -->
+    <string name="new_game">New game</string>
+    <string name="continue_game">Continue scoring</string>
+    <string name="recent_games">Recent games</string>
+    <string name="empty_home_title">Ready when you are</string>
+    <string name="empty_home_text">Start a new game when the third age is over. Scores, history and statistics are saved automatically.</string>
+    <string name="discard_game_title">Discard this game?</string>
+    <string name="discard_game_text">The scores entered so far will be lost.</string>
+    <plurals name="players_count">
+        <item quantity="one">%d player</item>
+        <item quantity="other">%d players</item>
+    </plurals>
+
+    <!-- Setup -->
+    <string name="players">Players</string>
+    <string name="seating_hint">Drag to match the seating order around the table.</string>
+    <string name="add_player">Add player</string>
+    <string name="last_group">Last group: %1$s</string>
+    <string name="choose_wonder">Choose wonder</string>
+    <string name="no_wonder">No wonder</string>
+    <string name="expansions">Expansions</string>
+    <string name="categories_in_game">Scored categories</string>
+    <string name="add_players_first">Add at least one player</string>
+    <plurals name="start_game">
+        <item quantity="one">Start with %d player</item>
+        <item quantity="other">Start with %d players</item>
+    </plurals>
+
+    <!-- Scoring -->
+    <string name="scoring_title">Scoring</string>
+    <string name="scoring_progress">%1$d of %2$d entered</string>
+    <string name="action_undo">Undo</string>
+    <string name="action_table">Score sheet</string>
+    <string name="action_finish">Finish game</string>
+    <string name="order_by_category">Category by category</string>
+    <string name="order_by_category_hint">Everyone calls out their points for one category, then on to the next. Like the paper score pad.</string>
+    <string name="order_by_player">Player by player</string>
+    <string name="order_by_player_hint">Enter one player\'s complete sheet, then hand the phone on.</string>
+    <string name="entering_for">%1$s · %2$s</string>
+    <string name="coins_caption">coins</string>
+    <string name="treasury_mode_coins">Coins</string>
+    <string name="treasury_mode_points">Points</string>
+    <string name="treasury_summary">%1$d coins → %2$s points</string>
+    <string name="treasury_summary_debt">%1$d coins, %2$d debt → %3$s points</string>
+    <string name="treasury_points_only">Points entered directly</string>
+    <string name="science_summary">%1$d · %2$d · %3$d symbols, %4$d sets</string>
+    <string name="military_summary">Victories %1$d · Defeats %2$d</string>
+
+    <string name="key_backspace">Delete digit</string>
+    <string name="key_sign">Toggle minus</string>
+    <string name="key_clear">Clear</string>
+    <string name="key_previous">Previous</string>
+    <string name="key_next">Next</string>
+    <string name="key_finish">Finish and show results</string>
+
+    <!-- Helpers -->
+    <string name="treasury_debt">Debt</string>
+    <string name="science_compass">Compass</string>
+    <string name="science_gear">Gear</string>
+    <string name="science_tablet">Tablet</string>
+    <string name="science_aristotle">Aristotle</string>
+    <string name="points_value">%1$s points</string>
+
+    <!-- Results -->
+    <string name="score_sheet">Score sheet</string>
+    <string name="tie_unresolved">%1$s are tied. Enter coins in the treasury to apply the tie-breaker.</string>
+    <string name="tie_by_coins">A tie on points was decided by coins.</string>
+    <plurals name="coins_count">
+        <item quantity="one">%1$d coin</item>
+        <item quantity="other">%1$d coins</item>
+    </plurals>
+    <string name="edit_scores">Edit scores</string>
+    <string name="rematch">Rematch</string>
+    <string name="delete_game_title">Delete this game?</string>
+    <string name="delete_game_text">It will be removed from history and statistics.</string>
+    <string name="share_header">7 Wonders · %1$s</string>
+
+    <!-- Stats -->
+    <string name="stats_title">Statistics</string>
+    <string name="stats_empty">Finish a game to see who rules the ancient world.</string>
+    <string name="stats_games">Games</string>
+    <string name="stats_players">Players</string>
+    <string name="stats_wonders">Wonders</string>
+    <string name="stats_high_score">High score</string>
+    <plurals name="stats_wins_of_games">
+        <item quantity="one">%1$d of %2$d game won</item>
+        <item quantity="other">%1$d of %2$d games won</item>
+    </plurals>
+    <string name="stats_average">Average</string>
+    <string name="stats_best">Best</string>
+    <string name="stats_strongest">Strongest</string>
+    <string name="stats_favorite_wonder">Favorite wonder: %1$s</string>
+    <string name="stats_avg_short">Ø %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_scoring_order">Scoring order</string>
+    <string name="settings_haptics">Haptic feedback</string>
+    <string name="settings_haptics_hint">Vibrate lightly on key presses</string>
+    <string name="settings_players">Saved players</string>
+    <string name="settings_no_players">Players you add to a game appear here.</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="rename_error">Name is empty or already taken</string>
+    <string name="remove_player_title">Remove %1$s?</string>
+    <string name="remove_player_text">They will no longer be suggested. Past games and statistics are kept.</string>
+
+    <!-- Added with inline counters -->
+    <string name="reorder">Drag to reorder</string>
+    <string name="token_add">Add a %1$s token</string>
+    <string name="token_remove">Remove a %1$s token</string>
+    <string name="science_mode_symbols">Symbols</string>
+    <string name="science_mode_points">Points</string>
+    <string name="science_wild_short">Any</string>
+
+    <!-- Visual overhaul -->
+    <string name="hero_overline">Score keeper for</string>
+    <string name="hero_title">7 Wonders</string>
+    <string name="hero_subtitle">Every point counted in seconds.</string>
+    <string name="scoring_progress_percent">%1$d %% scored</string>
+    <string name="victory">Victory</string>
+    <string name="shared_victory">Shared victory</string>
+    <string name="points_short">points</string>
+    <string name="leader">Leading</string>
+    <string name="ranking">Ranking</string>
+
+    <!-- Language and reset -->
+    <string name="settings_language">Language</string>
+    <string name="language_system">System default</string>
+    <string name="reset_title">Reset everything</string>
+    <string name="reset_hint">Delete all games, players, statistics and settings</string>
+    <string name="reset_confirm_title">Reset everything?</string>
+    <string name="reset_confirm_text">All games, players, statistics and settings will be permanently deleted. This cannot be undone.</string>
+    <string name="reset_confirm_action">Delete everything</string>
+    <string name="reset_done">Everything has been reset</string>
+    <string name="disclaimer">Unofficial fan project. 7 Wonders and its expansions are trademarks of Repos Production / Asmodee. This app is not affiliated with, endorsed or sponsored by them and uses no official artwork or texts.</string>
 </resources>

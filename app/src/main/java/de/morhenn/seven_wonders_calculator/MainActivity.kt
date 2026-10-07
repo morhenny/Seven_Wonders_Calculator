@@ -1,163 +1,107 @@
 package de.morhenn.seven_wonders_calculator
 
-import android.content.Context
 import android.os.Bundle
-import android.view.inputmethod.InputMethodManager
-import android.widget.*
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.math.pow
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.runtime.Composable
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.Lifecycle
+import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import de.morhenn.seven_wonders_calculator.ui.components.ThemedStatusBarIcons
+import de.morhenn.seven_wonders_calculator.ui.home.HomeScreen
+import de.morhenn.seven_wonders_calculator.ui.results.ResultsScreen
+import de.morhenn.seven_wonders_calculator.ui.scoring.ScoringScreen
+import de.morhenn.seven_wonders_calculator.ui.settings.SettingsScreen
+import de.morhenn.seven_wonders_calculator.ui.setup.SetupScreen
+import de.morhenn.seven_wonders_calculator.ui.stats.StatsScreen
+import de.morhenn.seven_wonders_calculator.ui.theme.SevenWondersTheme
+import kotlinx.serialization.Serializable
 
+@Serializable object HomeRoute
+@Serializable data class SetupRoute(val fromGameId: Long? = null)
+@Serializable data class ScoringRoute(val gameId: Long)
+@Serializable data class ResultsRoute(val gameId: Long)
+@Serializable object StatsRoute
+@Serializable object SettingsRoute
+
+/** AppCompat so the in-app language choice also works on Android 12 and lower. */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val button = findViewById<Button>(R.id.button)
-        val reset = findViewById<Button>(R.id.reset)
-        val table = findViewById<TableLayout>(R.id.table)
-
-        val nameRow = table.getChildAt(0) as TableRow
-        for (i in 1..7) {
-            for (j in 0..10) {
-                val row = table.getChildAt(j) as TableRow
-                val field = row.getChildAt(i) as EditText
-                if (j == 4) { //Science Row
-                    field.setOnLongClickListener {
-                        startScienceDialog(field)
-                        true
-                    }
-                }
-
-                field.setOnEditorActionListener { v, actionId, event ->
-                    if (j == 0) {
-                        if (i < 7) {
-                            val newField = row.getChildAt(i + 1) as EditText
-                            newField.requestFocus()
-                        } else {
-                            val newRow = table.getChildAt(j + 1) as TableRow
-                            val newField = newRow.getChildAt(1) as EditText
-                            newField.requestFocus()
-                        }
-                    } else if (i < 7 && (nameRow.getChildAt(i + 1) as EditText).text.isNotBlank()) {
-                        val newField = row.getChildAt(i + 1) as EditText
-                        newField.requestFocus()
-                    } else {
-                        if (j == 10) {
-                            (v as EditText).clearFocus()
-                            val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                            imm.hideSoftInputFromWindow(v.windowToken, 0)
-                            false
-                        } else {
-                            val newRow = table.getChildAt(j + 1) as TableRow
-                            val newField = newRow.getChildAt(1) as EditText
-                            newField.requestFocus()
-                        }
-                    }
-                    true
-                }
+        setContent {
+            SevenWondersTheme {
+                AppNavHost(rememberNavController())
             }
-        }
-        button.setOnClickListener {
-            val resultRow = table.getChildAt(11) as TableRow
-            for (i in 1..7) {
-                var result = 0
-                for (j in 1..10) {
-                    val row = table.getChildAt(j) as TableRow
-                    val field = row.getChildAt(i) as EditText
-                    if (field.text.isNotBlank()) {
-                        result += field.text.toString().toInt()
-                    }
-                }
-                val resultView = resultRow.getChildAt(i) as TextView
-                resultView.text = result.toString()
-            }
-        }
-        reset.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("Are you sure?")
-                .setMessage("Everything will be deleted!")
-                .setPositiveButton("Yes") { _, _ ->
-                    for (i in 1..7) {
-                        for (j in 0..10) {
-                            val row = table.getChildAt(j) as TableRow
-                            val field = row.getChildAt(i) as EditText
-                            field.setText("")
-                        }
-                        val row = table.getChildAt(11) as TableRow
-                        val field = row.getChildAt(i) as TextView
-                        field.text = "0"
-                    }
-                }
-                .setNeutralButton("Cancel") { _, _ -> }
-                .show()
         }
     }
+}
 
-    private fun startScienceDialog(field: EditText) {
-        val dialogLayout = layoutInflater.inflate(R.layout.science_dialog, null)
-        val scienceResult = dialogLayout.findViewById<TextView>(R.id.science_result)
-        val circleAmount = dialogLayout.findViewById<TextView>(R.id.circle_amount)
-        val gearAmount = dialogLayout.findViewById<TextView>(R.id.gear_amount)
-        val bookAmount = dialogLayout.findViewById<TextView>(R.id.book_amount)
-        var circles = 0
-        var gears = 0
-        var books = 0
+/**
+ * Navigation callbacks only fire while their screen is resumed. This drops double taps and
+ * key repeats that would otherwise pop the start destination and leave a blank screen.
+ */
+private inline fun NavBackStackEntry.ifResumed(block: () -> Unit) {
+    if (lifecycle.currentState == Lifecycle.State.RESUMED) block()
+}
 
-        dialogLayout.findViewById<ImageButton>(R.id.cicle_add).setOnClickListener {
-            circles = circleAmount.text.toString().toInt() + 1
-            circles.toString().also { circleAmount.text = it }
-            refreshScienceResult(circles, gears, books, scienceResult)
+@Composable
+private fun AppNavHost(nav: NavHostController) {
+    NavHost(
+        navController = nav,
+        startDestination = HomeRoute,
+        enterTransition = { fadeIn(tween(240)) + slideInHorizontally(tween(280)) { it / 8 } },
+        exitTransition = { fadeOut(tween(200)) },
+        popEnterTransition = { fadeIn(tween(240)) },
+        popExitTransition = { fadeOut(tween(200)) + slideOutHorizontally(tween(280)) { it / 8 } },
+    ) {
+        composable<HomeRoute> { entry ->
+            HomeScreen(
+                onNewGame = { entry.ifResumed { nav.navigate(SetupRoute()) } },
+                onOpenGame = { id, finished ->
+                    entry.ifResumed { nav.navigate(if (finished) ResultsRoute(id) else ScoringRoute(id)) }
+                },
+                onStats = { entry.ifResumed { nav.navigate(StatsRoute) } },
+                onSettings = { entry.ifResumed { nav.navigate(SettingsRoute) } },
+            )
         }
-        dialogLayout.findViewById<ImageButton>(R.id.circle_sub).setOnClickListener {
-            if (circleAmount.text.toString().toInt() > 0) {
-                circles = circleAmount.text.toString().toInt() - 1
-                circles.toString().also { circleAmount.text = it }
-                refreshScienceResult(circles, gears, books, scienceResult)
-            }
+        composable<SetupRoute> { entry ->
+            ThemedStatusBarIcons()
+            SetupScreen(
+                onBack = { entry.ifResumed { nav.popBackStack() } },
+                onStarted = { id -> entry.ifResumed { nav.navigate(ScoringRoute(id)) { popUpTo(HomeRoute) } } },
+            )
         }
-        dialogLayout.findViewById<ImageButton>(R.id.gear_add).setOnClickListener {
-            gears = gearAmount.text.toString().toInt() + 1
-            gears.toString().also { gearAmount.text = it }
-            refreshScienceResult(circles, gears, books, scienceResult)
+        composable<ScoringRoute> { entry ->
+            ThemedStatusBarIcons()
+            ScoringScreen(
+                onBack = { entry.ifResumed { nav.popBackStack() } },
+                onShowResults = { id -> entry.ifResumed { nav.navigate(ResultsRoute(id)) { popUpTo(HomeRoute) } } },
+            )
         }
-        dialogLayout.findViewById<ImageButton>(R.id.gear_sub).setOnClickListener {
-            if (gearAmount.text.toString().toInt() > 0) {
-                gears = gearAmount.text.toString().toInt() - 1
-                gears.toString().also { gearAmount.text = it }
-                refreshScienceResult(circles, gears, books, scienceResult)
-            }
+        composable<ResultsRoute> { entry ->
+            ResultsScreen(
+                onBack = { entry.ifResumed { nav.popBackStack() } },
+                onEdit = { id -> entry.ifResumed { nav.navigate(ScoringRoute(id)) { popUpTo(HomeRoute) } } },
+                onRematch = { id -> entry.ifResumed { nav.navigate(SetupRoute(fromGameId = id)) } },
+            )
         }
-        dialogLayout.findViewById<ImageButton>(R.id.book_add).setOnClickListener {
-            books = bookAmount.text.toString().toInt() + 1
-            books.toString().also { bookAmount.text = it }
-            refreshScienceResult(circles, gears, books, scienceResult)
-        }
-        dialogLayout.findViewById<ImageButton>(R.id.book_sub).setOnClickListener {
-            if (bookAmount.text.toString().toInt() > 0) {
-                books = bookAmount.text.toString().toInt() - 1
-                books.toString().also { bookAmount.text = it }
-                refreshScienceResult(circles, gears, books, scienceResult)
-            }
-        }
-        AlertDialog.Builder(this)
-            .setView(dialogLayout)
-            .setPositiveButton("Confirm") { _, _ ->
-                field.setText(scienceResult.text.toString())
-            }
-            .setNeutralButton("Cancel") { _, _ -> }
-            .show()
-    }
-
-    private fun refreshScienceResult(circles: Int, gears: Int, books: Int, resultView: TextView) {
-        var result = 0
-        var setCount = circles
-        if (gears < setCount) {
-            setCount = gears
-        }
-        if (books < setCount) {
-            setCount = books
-        }
-        result = setCount * 7 + circles.toDouble().pow(2.0).toInt() + gears.toDouble().pow(2.0).toInt() + books.toDouble().pow(2.0).toInt()
-        resultView.text = result.toString()
+        composable<StatsRoute> { entry ->
+            ThemedStatusBarIcons()
+            StatsScreen(onBack = { entry.ifResumed { nav.popBackStack() } }) }
+        composable<SettingsRoute> { entry ->
+            ThemedStatusBarIcons()
+            SettingsScreen(onBack = { entry.ifResumed { nav.popBackStack() } }) }
     }
 }

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">7 Wonders Rechner</string>
+
+    <!-- General -->
+    <string name="back">Zurück</string>
+    <string name="more">Weitere Optionen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="save">Speichern</string>
+    <string name="add">Hinzufügen</string>
+    <string name="remove">Entfernen</string>
+    <string name="rename">Umbenennen</string>
+    <string name="delete">Löschen</string>
+    <string name="discard">Verwerfen</string>
+    <string name="share">Teilen</string>
+    <string name="increase">%1$s erhöhen</string>
+    <string name="decrease">%1$s verringern</string>
+
+    <!-- Categories -->
+    <string name="category_military">Militär</string>
+    <string name="category_naval">Seekonflikte</string>
+    <string name="category_treasury">Münzen</string>
+    <string name="category_wonder">Weltwunder</string>
+    <string name="category_civilian">Profanbauten</string>
+    <string name="category_commercial">Handel</string>
+    <string name="category_guilds">Gilden</string>
+    <string name="category_science">Forschung</string>
+    <string name="category_leaders">Anführer</string>
+    <string name="category_cities">Städte</string>
+    <string name="category_edifice">Edifice</string>
+
+    <string name="hint_military">Summe eintippen oder Konfliktmarker antippen</string>
+    <string name="hint_naval">Summe eintippen oder Seemarker antippen</string>
+    <string name="hint_treasury">1 Punkt je 3 Münzen · Münzen entscheiden bei Gleichstand</string>
+    <string name="hint_wonder">Punkte der gebauten Wunderstufen</string>
+    <string name="hint_civilian">Blaue Karten</string>
+    <string name="hint_commercial">Gelbe Karten (Zeitalter III)</string>
+    <string name="hint_guilds">Lila Karten</string>
+    <string name="hint_science">Symbole zählen oder Punkte eintippen</string>
+    <string name="hint_leaders">Weiße Anführerkarten</string>
+    <string name="hint_cities">Schwarze Stadtkarten</string>
+    <string name="hint_edifice">Belohnungen und Strafen der Edifices</string>
+
+    <string name="expansion_leaders">Leaders</string>
+    <string name="expansion_cities">Cities</string>
+    <string name="expansion_armada">Armada</string>
+    <string name="expansion_edifice">Edifice</string>
+
+    <!-- Home -->
+    <string name="new_game">Neues Spiel</string>
+    <string name="continue_game">Wertung fortsetzen</string>
+    <string name="recent_games">Letzte Spiele</string>
+    <string name="empty_home_title">Bereit, wenn ihr es seid</string>
+    <string name="empty_home_text">Starte ein neues Spiel, sobald das dritte Zeitalter vorbei ist. Punkte, Verlauf und Statistiken werden automatisch gespeichert.</string>
+    <string name="discard_game_title">Dieses Spiel verwerfen?</string>
+    <string name="discard_game_text">Die bisher eingegebenen Punkte gehen verloren.</string>
+    <plurals name="players_count">
+        <item quantity="one">%d Spieler</item>
+        <item quantity="other">%d Spieler</item>
+    </plurals>
+
+    <!-- Setup -->
+    <string name="players">Spieler</string>
+    <string name="seating_hint">Ziehen, um die Sitzreihenfolge am Tisch abzubilden.</string>
+    <string name="add_player">Spieler hinzufügen</string>
+    <string name="last_group">Letzte Runde: %1$s</string>
+    <string name="choose_wonder">Weltwunder wählen</string>
+    <string name="no_wonder">Kein Weltwunder</string>
+    <string name="expansions">Erweiterungen</string>
+    <string name="categories_in_game">Gewertete Kategorien</string>
+    <string name="add_players_first">Füge mindestens einen Spieler hinzu</string>
+    <plurals name="start_game">
+        <item quantity="one">Mit %d Spieler starten</item>
+        <item quantity="other">Mit %d Spielern starten</item>
+    </plurals>
+
+    <!-- Scoring -->
+    <string name="scoring_title">Wertung</string>
+    <string name="scoring_progress">%1$d von %2$d eingetragen</string>
+    <string name="action_undo">Rückgängig</string>
+    <string name="action_table">Wertungsblock</string>
+    <string name="action_finish">Spiel beenden</string>
+    <string name="order_by_category">Kategorie für Kategorie</string>
+    <string name="order_by_category_hint">Alle sagen ihre Punkte für eine Kategorie an, dann geht es weiter. Wie auf dem Wertungsblock.</string>
+    <string name="order_by_player">Spieler für Spieler</string>
+    <string name="order_by_player_hint">Erst den ganzen Bogen eines Spielers eingeben, dann das Handy weitergeben.</string>
+    <string name="entering_for">%1$s · %2$s</string>
+    <string name="coins_caption">Münzen</string>
+    <string name="treasury_mode_coins">Münzen</string>
+    <string name="treasury_mode_points">Punkte</string>
+    <string name="treasury_summary">%1$d Münzen → %2$s Punkte</string>
+    <string name="treasury_summary_debt">%1$d Münzen, %2$d Schulden → %3$s Punkte</string>
+    <string name="treasury_points_only">Punkte direkt eingegeben</string>
+    <string name="science_summary">%1$d · %2$d · %3$d Symbole, %4$d Sets</string>
+    <string name="military_summary">Siege %1$d · Niederlagen %2$d</string>
+
+    <string name="key_backspace">Ziffer löschen</string>
+    <string name="key_sign">Minus umschalten</string>
+    <string name="key_clear">Leeren</string>
+    <string name="key_previous">Zurück</string>
+    <string name="key_next">Weiter</string>
+    <string name="key_finish">Beenden und Ergebnis zeigen</string>
+
+    <!-- Helpers -->
+    <string name="treasury_debt">Schulden</string>
+    <string name="science_compass">Zirkel</string>
+    <string name="science_gear">Zahnrad</string>
+    <string name="science_tablet">Steintafel</string>
+    <string name="science_aristotle">Aristoteles</string>
+    <string name="points_value">%1$s Punkte</string>
+
+    <!-- Results -->
+    <string name="score_sheet">Wertungsblock</string>
+    <string name="tie_unresolved">%1$s haben gleich viele Punkte. Gib Münzen ein, um den Gleichstand aufzulösen.</string>
+    <string name="tie_by_coins">Ein Gleichstand wurde über die Münzen entschieden.</string>
+    <plurals name="coins_count">
+        <item quantity="one">%1$d Münze</item>
+        <item quantity="other">%1$d Münzen</item>
+    </plurals>
+    <string name="edit_scores">Bearbeiten</string>
+    <string name="rematch">Revanche</string>
+    <string name="delete_game_title">Dieses Spiel löschen?</string>
+    <string name="delete_game_text">Es wird aus Verlauf und Statistik entfernt.</string>
+    <string name="share_header">7 Wonders · %1$s</string>
+
+    <!-- Stats -->
+    <string name="stats_title">Statistik</string>
+    <string name="stats_empty">Beende ein Spiel, um zu sehen, wer die antike Welt beherrscht.</string>
+    <string name="stats_games">Spiele</string>
+    <string name="stats_players">Spieler</string>
+    <string name="stats_wonders">Weltwunder</string>
+    <string name="stats_high_score">Rekord</string>
+    <plurals name="stats_wins_of_games">
+        <item quantity="one">%1$d von %2$d Spiel gewonnen</item>
+        <item quantity="other">%1$d von %2$d Spielen gewonnen</item>
+    </plurals>
+    <string name="stats_average">Schnitt</string>
+    <string name="stats_best">Bestwert</string>
+    <string name="stats_strongest">Stärke</string>
+    <string name="stats_favorite_wonder">Lieblingswunder: %1$s</string>
+    <string name="stats_avg_short">Ø %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_scoring_order">Reihenfolge der Eingabe</string>
+    <string name="settings_haptics">Haptisches Feedback</string>
+    <string name="settings_haptics_hint">Leichte Vibration bei Tastendruck</string>
+    <string name="settings_players">Gespeicherte Spieler</string>
+    <string name="settings_no_players">Spieler, die du zu einem Spiel hinzufügst, erscheinen hier.</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="rename_error">Name ist leer oder bereits vergeben</string>
+    <string name="remove_player_title">%1$s entfernen?</string>
+    <string name="remove_player_text">Wird nicht mehr vorgeschlagen. Vergangene Spiele und Statistiken bleiben erhalten.</string>
+
+    <!-- Added with inline counters -->
+    <string name="reorder">Ziehen zum Sortieren</string>
+    <string name="token_add">%1$s-Marker hinzufügen</string>
+    <string name="token_remove">%1$s-Marker entfernen</string>
+    <string name="science_mode_symbols">Symbole</string>
+    <string name="science_mode_points">Punkte</string>
+    <string name="science_wild_short">Joker</string>
+
+    <!-- Visual overhaul -->
+    <string name="hero_overline">Punkterechner für</string>
+    <string name="hero_title">7 Wonders</string>
+    <string name="hero_subtitle">Jeder Punkt in Sekunden gezählt.</string>
+    <string name="scoring_progress_percent">%1$d %% gewertet</string>
+    <string name="victory">Sieg</string>
+    <string name="shared_victory">Geteilter Sieg</string>
+    <string name="points_short">Punkte</string>
+    <string name="leader">Führt</string>
+    <string name="ranking">Rangliste</string>
+
+    <!-- Language and reset -->
+    <string name="settings_language">Sprache</string>
+    <string name="language_system">Systemsprache</string>
+    <string name="reset_title">Alles zurücksetzen</string>
+    <string name="reset_hint">Alle Spiele, Spieler, Statistiken und Einstellungen löschen</string>
+    <string name="reset_confirm_title">Alles zurücksetzen?</string>
+    <string name="reset_confirm_text">Alle Spiele, Spieler, Statistiken und Einstellungen werden endgültig gelöscht. Das kann nicht rückgängig gemacht werden.</string>
+    <string name="reset_confirm_action">Alles löschen</string>
+    <string name="reset_done">Alles wurde zurückgesetzt</string>
+    <string name="disclaimer">Inoffizielles Fanprojekt. 7 Wonders und seine Erweiterungen sind Marken von Repos Production / Asmodee. Diese App steht in keiner Verbindung zu ihnen, wird nicht von ihnen unterstützt und verwendet keine offiziellen Grafiken oder Texte.</string>
+</resources>

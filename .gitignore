@@ -1,11 +1,25 @@
-*.iml
+# Gradle and build output
 .gradle/
-/local.properties
-/.idea/
-.DS_Store
-/build
 build/
 /captures
 .externalNativeBuild
 .cxx
+.kotlin/
+
+# IDE
+*.iml
+/.idea/
+
+# Local machine configuration and signing secrets
 local.properties
+*.jks
+*.keystore
+keystore.properties
+
+# JVM crash dumps
+hs_err_pid*.log
+replay_pid*.log
+
+# OS
+.DS_Store
+Thumbs.db
